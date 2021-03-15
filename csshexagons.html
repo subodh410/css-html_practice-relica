@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        display: flex;
+        --s: 130px;
+        --m: 40px;
+      }
+      .container {
+        font-size: 0;
+      }
+      .container div {
+        width: var(--s);
+        margin: var(--m);
+        height: var(--s);
+        display: inline-block;
+        font-size: initial;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        background-color: red;
+        margin-bottom: calc(var(--m)-var(--s) / 2);
+      }
+      .container div:nth-child(odd) {
+        background-color: green;
+      }
+      .container::before {
+        content: "";
+        width: calc(var(--s) / 2+var(--m));
+        float: left;
+        height: 135%;
+        --r: calc(var(--s)+4 * var(--m)-1px);
+        shape-outside: repeating-linear-gradient(
+          trasperent 0 calc(vsr(--r)-1px),
+          #fff 0 var(--r)
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>

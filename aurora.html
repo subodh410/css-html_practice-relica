@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .aurora-outer {
+        background: linear-gradient(
+          45deg,
+          #32a6ff 0%,
+          #3f6fff 49%,
+          #8d54ff 82%
+        );
+        background-size: 200%;
+        animation: aurora 10s infinite;
+      }
+
+      .aurora-inner {
+        background: radial-gradient(
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0.15)
+        );
+        background-size: 200%;
+        animation: aurora 7s infinite;
+      }
+
+      @keyframes aurora {
+        0% {
+          background-position: left top;
+        }
+        25% {
+          background-position: right top;
+        }
+        50% {
+          background-position: right bottom;
+        }
+        75% {
+          background-position: left bottom;
+        }
+        100% {
+          background-position: left top;
+        }
+      }
+
+      div {
+        display: block;
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+      }
+
+      .title {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: 0;
+        transform: translateY(-50%);
+        font-size: 32px;
+        text-align: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="aurora-outer">
+      <div class="aurora-inner">
+        <h1 class="title">Aurora</h1>
+      </div>
+    </div>
+  </body>
+</html>

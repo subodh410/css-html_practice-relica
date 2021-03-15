@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        padding: 10px;
+        display: flex;
+        background-color: black;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+      }
+      nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      a {
+        text-decoration: none;
+        color: whitesmoke;
+        font-family: "Poppins", sans-serif;
+        position: relative;
+        transition: 0.5s ease-in-out;
+        padding: 5px;
+        letter-spacing: 8px;
+        font-weight: 200;
+      }
+
+      a::after {
+        content: "";
+        background-color: lightseagreen;
+        position: absolute;
+        left: 3px;
+        bottom: 0;
+        height: 3px;
+        width: 0;
+        transition: 0.5s ease-in-out;
+      }
+      a:hover {
+        color: lightseagreen;
+      }
+      a:hover::after {
+        width: 90%;
+        background-color: lightseagreen;
+      }
+
+      @keyframes bg {
+        0% {
+          background-size: 0 3px, 3px 0, 0 3px, 3px 0;
+        }
+        25% {
+          background-size: 100% 3px, 3px 0, 0 3px, 3px 0;
+        }
+        50% {
+          background-size: 100% 3px, 3px 100%, 0 3px, 3px 0;
+        }
+        75% {
+          background-size: 100% 3px, 3px 100%, 100% 3px, 3px 0;
+        }
+        100% {
+          background-size: 100% 3px, 3px 100%, 100% 3px, 3px 100%;
+        }
+      }
+
+      nav:hover {
+        width: 50%;
+        margin: 2rem auto;
+        padding: 2em;
+
+        background-repeat: no-repeat;
+        background-image: linear-gradient(
+            to right,
+            lightseagreen 100%,
+            lightseagreen 100%
+          ),
+          linear-gradient(to bottom, lightseagreen 100%, lightseagreen 100%),
+          linear-gradient(to right, lightseagreen 100%, lightseagreen 100%),
+          linear-gradient(to bottom, lightseagreen 100%, lightseagreen 100%);
+        background-size: 100% 3px, 3px 100%, 100% 3px, 3px 100%;
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        animation: bg 1.5s cubic-bezier(0.19, 1, 0.22, 1) 1;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#">LINK1</a>
+      <a href="#">LINK2</a>
+      <a href="#">LINK3</a>
+      <a href="#">LINK4</a>
+      <a href="#">LINK5</a>
+    </nav>
+  </body>
+</html>
